@@ -43,7 +43,7 @@ export const App: React.FC = () => {
     loadTodos();
   }, []);
 
-  function addTodo(event: React.FormEvent<HTMLFormElement>) {
+  const addTodo = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const title = newTodoInput.trim();
 
@@ -69,9 +69,9 @@ export const App: React.FC = () => {
     } else {
       setErrorMessage('Title should not be empty');
     }
-  }
+  };
 
-  function handleDeleteTodo(todoIds: number[]) {
+  const handleDeleteTodo = (todoIds: number[]) => {
     if (todoIds.length === 0) {
       return;
     }
@@ -91,7 +91,7 @@ export const App: React.FC = () => {
           setLoadingIds([]);
         });
     });
-  }
+  };
 
   const clearCompletedTasks = () => {
     const todoCompletedIds = completedTasks.map(todo => todo.id);

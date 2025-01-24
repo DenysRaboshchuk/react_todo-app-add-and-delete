@@ -24,6 +24,10 @@ export const ErrorNotifications: React.FC<Props> = ({
     };
   }, [errorMessage, setErrorMessage]);
 
+  const onHideErrorButtonClick = () => {
+    setErrorMessage('');
+  };
+
   return (
     <div
       data-cy="ErrorNotification"
@@ -39,9 +43,7 @@ export const ErrorNotifications: React.FC<Props> = ({
         data-cy="HideErrorButton"
         type="button"
         className="delete"
-        onClick={() => {
-          setErrorMessage('');
-        }}
+        onClick={onHideErrorButtonClick}
       />
       {errorMessage}
     </div>

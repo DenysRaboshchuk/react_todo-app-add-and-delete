@@ -44,7 +44,7 @@ export const TodoFooter: React.FC<Props> = ({
       {/* this button should be disabled if there are no completed todos */}
       <button
         type="button"
-        className={classNames('todoapp__clear-completed', 'disabled')}
+        className="todoapp__clear-completed"
         data-cy="ClearCompletedButton"
         disabled={!isCompletedExists}
         onClick={clearCompletedTasks}
